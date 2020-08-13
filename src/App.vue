@@ -6,6 +6,7 @@
 
 //  全局样式 因此不加scoped
 <style lang="scss">
+@import "~@/assets/style/style.scss";
 // @import "~@/assets/style/helper.scss";
 // @import "~@/assets/style/reset.scss";
 // @import "~@/assets/style/var.scss";

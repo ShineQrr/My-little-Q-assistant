@@ -1,0 +1,73 @@
+// Color Palette
+$black: #000;
+$white: #fff;
+$gray-1: #f7f8fa;
+$gray-2: #f2f3f5;
+$gray-3: #ebedf0;
+$gray-4: #dcdee0;
+$gray-5: #c8c9cc;
+$gray-6: #969799;
+$gray-7: #646566;
+$gray-8: #323233;
+$gray-9:#efeeef;
+
+// $red: #ee0a24;
+$red:#c62f2f;
+$blue: #1989fa;
+$orange: #ff976a;
+$orange-dark: #ed6a0c;
+$orange-light: #fffbe8;
+$green: #07c160;
+$pink: #ff8198;
+
+
+// colors
+$colors: (
+  'primary': #db9e3f,
+  'info': #4b67af,
+  'danger': #791a15,
+  'blue-1': #1f3695,
+  'blue': #4394e4,
+  'white': #fff,
+  'white-1': #fcfcfc,
+  'white-2': #eceef0,
+  'light': #f9f9f9,
+  'light-1': #d4d9de,
+  'grey': #999,
+  'grey-1': #666,
+  'dark-1': #343440,
+  'dark': #222,
+  'black': #000,
+  // 'red':#c62f2f,
+  // 'blue':#1989fa
+);
+$border-color: map-get($colors, 'light-1');
+// font size
+$base-font-size: 1rem;
+$font-sizes: (
+  xxs: 0.6154,
+  xs: 0.7692,
+  //10px
+    sm: 0.9231,
+  //12px
+    md: 1,
+  //13px
+    lg: 1.0769,
+  //14px
+    xl: 1.2308,
+  //16px,,,,
+);
+
+$flex-jc: (
+  start: flex-start,
+  end: flex-end,
+  center: center,
+  between: space-between,
+  around: space-around,
+);
+$flex-ai: (
+  start: flex-start,
+  end: flex-end,
+  center: center,
+  stretch: stretch,
+);

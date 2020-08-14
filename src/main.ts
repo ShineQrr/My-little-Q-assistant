@@ -4,12 +4,12 @@ import './registerServiceWorker'
 import router from './router'
 import store from './store'
 // import Layout from '@/views/Layout.vue';
-// import Icon from '@/components/Icon.vue';
+import Icon from '@/components/common/Icon.vue';
 
 Vue.config.productionTip = false
 
 // Vue.component('Layout', Layout)
-// Vue.component('Icon', Icon)
+Vue.component('Icon', Icon)
 
 
 new Vue({

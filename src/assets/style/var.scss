@@ -1,6 +1,7 @@
 // Color Palette
 $black: #000;
 $white: #fff;
+$grey-0: #f5f5f5;
 $gray-1: #f7f8fa;
 $gray-2: #f2f3f5;
 $gray-3: #ebedf0;
@@ -42,6 +43,11 @@ $colors: (
   // 'blue':#1989fa
 );
 $border-color: map-get($colors, 'light-1');
+$background-color: $grey-0;
+$theme-color:$red;
+$tag-color:lighten($theme-color,40%);
+$tag-selected-color:lighten($theme-color,10%);
+
 // font size
 $base-font-size: 1rem;
 $font-sizes: (
@@ -71,3 +77,41 @@ $flex-ai: (
   center: center,
   stretch: stretch,
 );
+
+// Component Colors
+$text-color: $gray-7;
+$active-color: $gray-2;
+$active-opacity: 0.7;
+$disabled-opacity: 0.5;
+$background-color: $gray-1;
+$background-color-light: #fafafa;
+$text-link-color: #576b95;
+
+
+// Font
+$font-size-xs: 10px;
+$font-size-sm: 12px;
+$font-size-md: 14px;
+$font-size-lg: 16px;
+$font-weight-bold: 500;
+$line-height-xs: 14px;
+$line-height-sm: 18px;
+$line-height-md: 20px;
+$line-height-lg: 22px;
+$base-font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue',
+  Helvetica, Segoe UI, Arial, Roboto, 'PingFang SC', 'Hiragino Sans GB',
+  'Microsoft Yahei', sans-serif;
+$price-integer-font-family: Avenir-Heavy, PingFang SC, Helvetica Neue, Arial,
+  sans-serif;
+
+
+// NavBar
+$nav-bar-height: 48px;
+// $nav-bar-background-color: $white;
+$nav-bar-background-color: $red;
+$nav-bar-arrow-size: 16px;
+$nav-bar-icon-color: $blue;
+$nav-bar-text-color: $white;
+$nav-bar-title-font-size: $font-size-lg;
+$nav-bar-title-text-color: $text-color;
+$nav-bar-z-index: 5;

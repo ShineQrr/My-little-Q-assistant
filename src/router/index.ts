@@ -1,54 +1,48 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-// import Money from '@/views/Money.vue';
-// import Labels from '@/views/Labels.vue';
-// import Statistics from '@/views/Statistics.vue';
+
+
+import Home from '@/views/home/Home.vue';
+import Money from '@/views/money/Money.vue';
+import TodoList from '@/views/todolist/TodoList.vue';
+import DaysMatter from '@/views/daysmatter/DaysMatter.vue';
+
 import NotFound from '@/views/NotFound.vue';
-// import EditLabel from '@/views/EditLabel.vue';
-// import BookKeeping from '../views/BookKeeping.vue';
-import Home from '../views/home/Home.vue';
+// import TEST1 from '../views/TEST1.vue';
+// import TEST2 from '../views/TEST2.vue';
+
 
 Vue.use(VueRouter)
 
 const routes = [
   {
     path: '/',
-    redirect: '/home'
+    component: Home
   },
   {
     path: '/home',
-    name: 'Home',
     component: Home
   },
-  // {
-  //   path: '/bookkeeping',
-  //   name: 'BookKeeping',
-  //   component: BookKeeping
-  // },
-  // {
-  //   path: '/money',
-  //   name: 'Money',
-  //   component: Money
-  // },
-  // {
-  //   path: '/labels',
-  //   name: 'Labels',
-  //   component: Labels
-  // },
-  // {
-  //   path: '/statistics',
-  //   name: 'Statistics',
-  //   component: Statistics
-  // },
-  // {
-  //   path: '/labels/edit/:id',
-  //   name: 'EditLabel',
-  //   component: EditLabel
-  // },
   {
-    path: '*',
-    component: NotFound
-  }
+    path: '/money',
+    component: Money
+  },
+  {
+    path: '/todolist',
+    component: TodoList
+  },
+  {
+    path: '/daysmatter',
+    component: DaysMatter
+  },
+  // {
+  //   path: '/',
+  //   redirect: '/home'
+  // },
+  // {
+  //   path: '*',
+  //   component: NotFound
+  // }
   // {
   //   path: '/',
   //   name: 'Home',

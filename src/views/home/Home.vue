@@ -1,9 +1,21 @@
 <template>
-  <div>HOME</div>
+  <div>
+    <Layout></Layout>
+  </div>
 </template>
 
-<script>
+<script lang="ts">
+// export default {
+//   name: "Home",
+// };
 import Vue from "vue";
+import { Component } from "vue-property-decorator";
+import TabBar from "@/components/tabbar/TabBar.vue";
+import Layout from "@/components/layout/Layout.vue";
+
+@Component({
+  components: { Layout, TabBar },
+})
 export default class Home extends Vue {}
 </script>
 

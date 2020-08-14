@@ -1,6 +1,19 @@
 <template>
   <div>
-    <Layout></Layout>
+    <Layout>
+      <!-- 顶部导航栏 -->
+      <template #navbar>
+        <nav-bar>
+          <template #left>
+            <Icon name="menu" />
+          </template>
+          <template #center>小Q同学</template>
+        </nav-bar>
+      </template>
+
+      <!-- 中间内容区 -->
+      <div>内容区</div>
+    </Layout>
   </div>
 </template>
 
@@ -10,11 +23,10 @@
 // };
 import Vue from "vue";
 import { Component } from "vue-property-decorator";
-import TabBar from "@/components/tabbar/TabBar.vue";
 import Layout from "@/components/layout/Layout.vue";
 
 @Component({
-  components: { Layout, TabBar },
+  components: { Layout },
 })
 export default class Home extends Vue {}
 </script>

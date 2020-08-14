@@ -10,11 +10,11 @@
       <p>记账</p>
     </router-link>
     <router-link class="tabbar-item" to="/todolist" active-class="selected">
-      <Icon :name="label" class="icon" />
+      <Icon :name="todo" class="icon" />
       <p>记事</p>
     </router-link>
     <router-link class="tabbar-item" to="/daysmatter" active-class="selected">
-      <Icon :name="statistics" class="icon" />
+      <Icon :name="days" class="icon" />
       <p>记日</p>
     </router-link>
   </div>
@@ -30,12 +30,14 @@ export default class TabBar extends Vue {
   get money() {
     return this.$route.path === "/money" ? "money_selected" : "money";
   }
-  get label() {
+  get todo() {
     return this.$route.path === "/todolist" ? "label_selected" : "label";
   }
   //TODO
-  get statistics() {
-    return this.$route.path === "/daysmatter" ? "statistics" : "statistics";
+  get days() {
+    return this.$route.path === "/daysmatter"
+      ? "icon_calendar_fill"
+      : "icon_calendar";
   }
 }
 </script>

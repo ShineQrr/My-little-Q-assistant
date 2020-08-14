@@ -1,9 +1,16 @@
 <template>
   <div class="layout-wrapper">
-    <nav-bar></nav-bar>
+    <!-- 顶部导航栏 -->
+    <header>
+      <slot name="navbar"></slot>
+    </header>
+
+    <!-- 中间内容区 -->
     <div class="content">
       <slot />
     </div>
+
+    <!-- 底部标签栏 -->
     <tab-bar></tab-bar>
   </div>
 </template>

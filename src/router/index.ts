@@ -1,15 +1,10 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-
-
 import Home from '@/views/home/Home.vue';
 import Money from '@/views/money/Money.vue';
 import TodoList from '@/views/todolist/TodoList.vue';
 import DaysMatter from '@/views/daysmatter/DaysMatter.vue';
-
 import NotFound from '@/views/NotFound.vue';
-// import TEST1 from '../views/TEST1.vue';
-// import TEST2 from '../views/TEST2.vue';
 
 
 Vue.use(VueRouter)
@@ -35,14 +30,10 @@ const routes = [
     path: '/daysmatter',
     component: DaysMatter
   },
-  // {
-  //   path: '/',
-  //   redirect: '/home'
-  // },
-  // {
-  //   path: '*',
-  //   component: NotFound
-  // }
+  {
+    path: '*',
+    component: NotFound
+  }
   // {
   //   path: '/',
   //   name: 'Home',

@@ -5,12 +5,13 @@ import router from './router'
 import store from './store'
 // import Layout from '@/views/Layout.vue';
 import Icon from '@/components/common/Icon.vue';
+import NavBar from '@/components/navbar/NavBar.vue';
 
 Vue.config.productionTip = false
 
 // Vue.component('Layout', Layout)
 Vue.component('Icon', Icon)
-
+Vue.component('NavBar', NavBar)
 
 new Vue({
   router,

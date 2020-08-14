@@ -47,6 +47,7 @@ $background-color: $grey-0;
 $theme-color:$red;
 $tag-color:lighten($theme-color,40%);
 $tag-selected-color:lighten($theme-color,10%);
+$numberpad-button-text-color:map-get($colors, 'grey-1');
 
 // font size
 $base-font-size: 1rem;
@@ -138,3 +139,6 @@ $tabbar-item-selected-color:$red;
 $tab-content-font-size: $font-size-md;
 $tab-item-selected-color:$red;
 $tab-item-hight:48px;
+
+
+$color-shadow:rgba(0, 0, 0, 0.3);

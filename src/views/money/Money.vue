@@ -255,7 +255,7 @@ export default class Money extends Vue {
     }
   }
   .interval-tabs-item {
-    height: 48px;
+    height: $nav-bar-height;
   }
 }
 %item {

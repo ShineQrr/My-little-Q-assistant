@@ -19,10 +19,9 @@
 import Vue from "vue";
 import { Component } from "vue-property-decorator";
 import TabBar from "../tabbar/TabBar.vue";
-import NavBar from "../navbar/NavBar.vue";
 
 @Component({
-  components: { TabBar, NavBar },
+  components: { TabBar },
 })
 export default class Layout extends Vue {}
 </script>

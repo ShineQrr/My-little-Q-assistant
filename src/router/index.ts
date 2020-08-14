@@ -5,6 +5,7 @@ import Money from '@/views/money/Money.vue';
 import TodoList from '@/views/todolist/TodoList.vue';
 import DaysMatter from '@/views/daysmatter/DaysMatter.vue';
 import NotFound from '@/views/NotFound.vue';
+import BookKeeping from '../views/bookkeeping/BookKeeping.vue';
 
 
 Vue.use(VueRouter)
@@ -29,6 +30,10 @@ const routes = [
   {
     path: '/daysmatter',
     component: DaysMatter
+  },
+  {
+    path: '/bookkeeping',
+    component: BookKeeping
   },
   {
     path: '*',

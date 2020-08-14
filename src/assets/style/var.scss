@@ -39,9 +39,9 @@ $colors: (
   'dark-1': #343440,
   'dark': #222,
   'black': #000,
-  // 'red':#c62f2f,
-  // 'blue':#1989fa
 );
+
+
 $border-color: map-get($colors, 'light-1');
 $background-color: $grey-0;
 $theme-color:$red;
@@ -106,11 +106,8 @@ $price-integer-font-family: Avenir-Heavy, PingFang SC, Helvetica Neue, Arial,
 
 
 // NavBar
-$nav-bar-height: 48px;
-// $nav-bar-background-color: $white;
-$nav-bar-background-color: $red;
+$nav-bar-height: 46px;
 $nav-bar-arrow-size: 16px;
-$nav-bar-icon-color: $blue;
 $nav-bar-text-color: $white;
 $nav-bar-title-font-size: $font-size-lg;
 $nav-bar-title-text-color: $text-color;

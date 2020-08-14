@@ -37,6 +37,5 @@ export default class Layout extends Vue {}
 .content {
   overflow: auto;
   flex-grow: 1;
-  // background-color: #E1E1E0;
 }
 </style>

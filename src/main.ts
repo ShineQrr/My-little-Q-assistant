@@ -3,6 +3,7 @@ import App from './App.vue'
 import './registerServiceWorker'
 import router from './router'
 import store from './store'
+// import 'lib-flexible/flexible'
 // import Layout from '@/views/Layout.vue';
 import Icon from '@/components/common/Icon.vue';
 import NavBar from '@/components/navbar/NavBar.vue';

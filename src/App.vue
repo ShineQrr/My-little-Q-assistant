@@ -22,7 +22,13 @@ body {
   background: $background-color;
 }
 #app {
-  max-width: 500px;
+  min-width: 320px;
+  max-width: 750px;
   margin: 0 auto;
 }
+// @media screen and (min-width: 750px) {
+//   html {
+//     font-size: 37.5px !important;
+//   }
+// }
 </style>

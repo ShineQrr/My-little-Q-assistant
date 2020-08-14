@@ -33,7 +33,6 @@ export default class TabBar extends Vue {
   get todo() {
     return this.$route.path === "/todolist" ? "label_selected" : "label";
   }
-  //TODO
   get days() {
     return this.$route.path === "/daysmatter"
       ? "icon_calendar_fill"
@@ -50,11 +49,11 @@ export default class TabBar extends Vue {
   display: flex;
   // justify-content: space-around;
   box-shadow: 0 0 2px rgba(0, 0, 0, 0.25);
-  font-size: 12px;
+  font-size: 0.75rem;
   // router-link的样式
   > .tabbar-item {
     flex: 1;
-    padding-bottom: 2px;
+    padding-bottom: 0.125rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -62,9 +61,9 @@ export default class TabBar extends Vue {
     color: $gray-6;
     // 图标样式
     .icon {
-      width: 24px;
-      height: 24px;
-      margin: 4px 0 2px;
+      width: 1.5rem;
+      height: 1.5rem;
+      margin: 0.25rem 0 0.125rem;
     }
   }
   > .tabbar-item.selected {

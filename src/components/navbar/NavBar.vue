@@ -1,6 +1,6 @@
 <template>
   <!-- 顶部标题栏 -->
-  <div class="nav-bar">
+  <div class="nav-bar text-white">
     <div class="nav-left">
       <slot name="left"></slot>
     </div>
@@ -23,17 +23,15 @@ export default {
 @import "~@/assets/style/var.scss";
 
 .nav-bar {
-  position: relative;
   z-index: $nav-bar-z-index;
   display: flex;
   align-items: center;
   height: $nav-bar-height;
   line-height: 1.5;
   text-align: center;
-  background-color: $nav-bar-background-color;
-  color: $white;
+  background-color: $theme-color;
   .nav-left {
-    width: 60px;
+    width: 3.75rem;
   }
 
   .nav-center {
@@ -41,7 +39,7 @@ export default {
   }
 
   .nav-right {
-    width: 60px;
+    width: 3.75rem;
   }
 }
 </style>

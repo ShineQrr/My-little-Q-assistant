@@ -1,12 +1,13 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Home from '@/views/home/Home.vue';
-import Money from '@/views/money/Money.vue';
-import TodoList from '@/views/todolist/TodoList.vue';
-import DaysMatter from '@/views/daysmatter/DaysMatter.vue';
-import NotFound from '@/views/NotFound.vue';
-import BookKeeping from '../views/bookkeeping/BookKeeping.vue';
 
+const Home = () => import(/* webpackChunkName: "home" */ '@/views/home/Home.vue')
+const Money = () => import(/* webpackChunkName: "money" */ '@/views/money/Money.vue')
+const TodoList = () => import(/* webpackChunkName: "todolist" */ '@/views/todolist/TodoList.vue')
+const DaysMatter = () => import(/* webpackChunkName: "daysmatter" */ '@/views/daysmatter/DaysMatter.vue')
+const NotFound = () => import(/* webpackChunkName: "notfound" */ '@/views/NotFound.vue')
+
+const BookKeeping = () => import(/* webpackChunkName: "bookkeeping" */ '../views/bookkeeping/BookKeeping.vue')
 
 Vue.use(VueRouter)
 
@@ -17,45 +18,38 @@ const routes = [
   },
   {
     path: '/home',
+    name: 'Home',
     component: Home
   },
   {
     path: '/money',
+    name: 'Money',
     component: Money
   },
   {
     path: '/todolist',
+    name: 'TodoList',
     component: TodoList
   },
   {
     path: '/daysmatter',
+    name: 'DaysMatter',
     component: DaysMatter
   },
   {
     path: '/bookkeeping',
+    name: 'BookKeeping',
     component: BookKeeping
   },
   {
     path: '*',
     component: NotFound
   }
-  // {
-  //   path: '/',
-  //   name: 'Home',
-  //   component: Home
-  // },
-  // {
-  //   path: '/about',
-  //   name: 'About',
-  //   // route level code-splitting
-  //   // this generates a separate chunk (about.[hash].js) for this route
-  //   // which is lazy-loaded when the route is visited.
-  //   component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
-  // }
 ]
 
 const router = new VueRouter({
-  routes
+  routes,
+  mode: 'history'
 })
 
 export default router

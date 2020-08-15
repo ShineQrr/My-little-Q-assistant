@@ -18,9 +18,6 @@
 </template>
 
 <script lang="ts">
-// export default {
-//   name: "Home",
-// };
 import Vue from "vue";
 import { Component } from "vue-property-decorator";
 import Layout from "@/components/layout/Layout.vue";

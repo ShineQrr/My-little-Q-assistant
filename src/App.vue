@@ -1,6 +1,8 @@
 <template>
   <div id="app">
-    <router-view />
+    <keep-alive>
+      <router-view />
+    </keep-alive>
   </div>
 </template>
 
@@ -26,6 +28,7 @@ body {
   max-width: 750px;
   margin: 0 auto;
 }
+
 // @media screen and (min-width: 750px) {
 //   html {
 //     font-size: 37.5px !important;

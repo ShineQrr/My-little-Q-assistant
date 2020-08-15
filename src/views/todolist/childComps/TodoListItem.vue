@@ -44,11 +44,12 @@ export default {
 }
 .finished {
   text-decoration: line-through;
-  color: #858181;
+  color: $gray-6;
 }
 .dele {
   float: right;
-  color: lighten(red, 10%);
+  // color: lighten(red, 10%);
+  color: #ee0a24;
   padding: 4px;
   font-size: 14px;
   cursor: pointer;

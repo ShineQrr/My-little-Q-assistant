@@ -12,7 +12,13 @@
       </template>
 
       <!-- 中间日历区 -->
-      <div class="calendar-wrapper"></div>
+      <div v-show="isListShow" class="calendar-wrapper"></div>
+
+      <div class="hide-bar" @click="changeCalendarDisplay">
+        <span>{{ isListShow? '隐藏' : '显示'}}日历</span>
+        <Icon :name="hideBarIconName" class="hide-bar-icon" />
+      </div>
+
       <!-- 底部内容区 -->
       <div class="todocard-wrapper">
         <h2>TODO</h2>
@@ -73,6 +79,8 @@ export default {
       id: 0,
       lists: [],
       filter: "全部",
+      isListShow: true,
+      hideBarIconName: "arrow-up",
     };
   },
   watch: {
@@ -136,6 +144,12 @@ export default {
     updataData() {
       localStorage.setItem("todoListData", JSON.stringify(this.lists));
     },
+    changeCalendarDisplay() {
+      this.isListShow = !this.isListShow;
+      this.isListShow
+        ? (this.hideBarIconName = "arrow-up")
+        : (this.hideBarIconName = "arrow-down");
+    },
   },
   mounted() {
     this.getData();
@@ -144,6 +158,12 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import "~@/assets/style/var.scss";
+
+.calendar-wrapper {
+  border: 1px solid pink;
+  height: 40%;
+}
 .todocard-wrapper {
   max-width: 420px;
   margin: 20px 12px;
@@ -171,5 +191,17 @@ h2 {
   border: 1px solid #ccc;
   outline: 0;
   box-shadow: 0 0 5px #ccc;
+}
+
+// 隐藏近日账单选项
+.hide-bar {
+  padding-top: 16px;
+  text-align: center;
+  color: $text-color;
+  // margin-bottom: 32px;
+  font-size: $font-size-md;
+  .hide-bar-icon {
+    margin-left: 4px;
+  }
 }
 </style>

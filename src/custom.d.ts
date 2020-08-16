@@ -29,10 +29,16 @@ type TagListModel = {
 }
 
 type TodoList = {
-    id: string;
+    id: number;
     content: string;
     finished: boolean;
 }
+
+// type TodoLists = {
+//     id: string;
+//     content: string;
+//     finished: boolean;
+// }
 
 // interface Window {
 // }

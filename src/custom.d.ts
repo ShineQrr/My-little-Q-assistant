@@ -28,5 +28,11 @@ type TagListModel = {
     remove: (id: string) => boolean;
 }
 
+type TodoList = {
+    id: string;
+    content: string;
+    finished: boolean;
+}
+
 // interface Window {
 // }

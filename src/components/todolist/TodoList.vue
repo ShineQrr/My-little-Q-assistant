@@ -1,66 +1,40 @@
 <template>
   <div>
-    <Layout>
-      <!-- 顶部导航栏 -->
-      <template #navbar>
-        <nav-bar>
-          <template #left>
-            <Icon name="menu" />
-          </template>
-          <template #center>小Q记事</template>
-        </nav-bar>
-      </template>
-
-      <!-- 中间日历区 -->
-      <div v-show="isListShow" class="calendar-wrapper"></div>
-
-      <div class="hide-bar" @click="changeCalendarDisplay">
-        <span>{{ isListShow? '隐藏' : '显示'}}日历</span>
-        <Icon :name="hideBarIconName" class="hide-bar-icon" />
+    <h2>TODO</h2>
+    <div class="todo-tab-wrapper">
+      <todo-tab
+        :lists="lists"
+        :filter="filter"
+        @toggle="toggleFilter"
+        @clear="clearAll"
+        @dele="deleteList"
+      ></todo-tab>
+    </div>
+    <div class="cell-item">
+      <div class="cell-left">
+        <input
+          @keydown.enter="addTaskByKeyboard"
+          v-model="inputTask"
+          type="text"
+          placeholder="今天也要加油鸭..."
+        />
       </div>
-
-      <!-- 底部内容区 -->
-      <div class="todocard-wrapper">
-        <h2>TODO</h2>
-        <div class="todo-tab-wrapper">
-          <todo-tab
-            :lists="lists"
-            :filter="filter"
-            @toggle="toggleFilter"
-            @clear="clearAll"
-            @dele="deleteList"
-          ></todo-tab>
-        </div>
-        <div class="cell-item">
-          <div class="cell-left">
-            <input
-              @keydown.enter="addTaskByKeyboard"
-              v-model="inputTask"
-              type="text"
-              placeholder="今天也要加油鸭..."
-            />
-          </div>
-          <div class="cell-right" @click="addTaskByMouse(inputTask)">
-            <svg class="icon">
-              <use xlink:href="#decline-filling" />
-            </svg>
-          </div>
-        </div>
-
-        <!-- <div class="input-task-box">
-        <input class="edit" @keydown.enter="addTask" type="text" placeholder="今天也要加油鸭..." />
-        </div>-->
-        <div v-if="lists.length > 0">
-          <todo-list-item
-            v-for="list of filterTodoList"
-            :list="list"
-            :key="list.id"
-            @change-status="changeStatus"
-            @remove="removeTask"
-          ></todo-list-item>
-        </div>
+      <div class="cell-right" @click="addTaskByMouse(inputTask)">
+        <svg class="icon">
+          <use xlink:href="#decline-filling" />
+        </svg>
       </div>
-    </Layout>
+    </div>
+
+    <div v-if="lists.length > 0">
+      <todo-list-item
+        v-for="list of filterTodoList"
+        :list="list"
+        :key="list.id"
+        @change-status="changeStatus"
+        @remove="removeTask"
+      ></todo-list-item>
+    </div>
   </div>
 </template>
 
@@ -78,19 +52,10 @@ export default class TodoList extends Vue {
   id = 0;
   lists: any[] = [];
   filter = "全部";
-  isListShow = true;
-  hideBarIconName = "arrow-up";
 
   @Watch("lists")
   onListsChanged(val: string, oldVal: string) {
     return this.updataData();
-  }
-  changeCalendarDisplay() {
-    this.isListShow = !this.isListShow;
-
-    this.isListShow
-      ? (this.hideBarIconName = "arrow-up")
-      : (this.hideBarIconName = "arrow-down");
   }
 
   get filterTodoList() {
@@ -176,17 +141,11 @@ export default class TodoList extends Vue {
 <style lang="scss" scoped>
 @import "~@/assets/style/var.scss";
 
-.calendar-wrapper {
-  border: 1px solid pink;
-  height: 40%;
-}
 .todocard-wrapper {
   max-width: 420px;
   margin: 20px 12px;
-  // padding: 20px 2% 30px;
   padding: 16px;
   border-radius: 8px;
-  // box-shadow: 0px 2px 10px 2px #ccc;
   box-shadow: 0 8px 12px #ebedf0;
   background-color: #fff;
 }
@@ -200,17 +159,7 @@ h2 {
   padding-bottom: 8px;
   border-bottom: 1px solid #ebedf0;
 }
-// 隐藏近日账单选项
-.hide-bar {
-  padding-top: 16px;
-  text-align: center;
-  color: $text-color;
-  // margin-bottom: 32px;
-  font-size: $font-size-md;
-  .hide-bar-icon {
-    margin-left: 4px;
-  }
-}
+
 .cell-item {
   display: flex;
   justify-content: space-between;

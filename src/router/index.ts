@@ -1,9 +1,10 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
+import HelloWorld from '@/demo/demo.vue'
 
 const Home = () => import(/* webpackChunkName: "home" */ '@/views/home/Home.vue')
 const Money = () => import(/* webpackChunkName: "money" */ '@/views/money/Money.vue')
-const TodoList = () => import(/* webpackChunkName: "todolist" */ '@/views/todolist/TodoList.vue')
+const TodoListPage = () => import(/* webpackChunkName: "todolist" */ '@/views/todolist/TodoListPage.vue')
 const DaysMatter = () => import(/* webpackChunkName: "daysmatter" */ '@/views/daysmatter/DaysMatter.vue')
 const NotFound = () => import(/* webpackChunkName: "notfound" */ '@/views/NotFound.vue')
 
@@ -28,8 +29,8 @@ const routes = [
   },
   {
     path: '/todolist',
-    name: 'TodoList',
-    component: TodoList
+    name: 'TodoListPage',
+    component: TodoListPage
   },
   {
     path: '/daysmatter',
@@ -41,6 +42,12 @@ const routes = [
     name: 'BookKeeping',
     component: BookKeeping
   },
+  {
+    path: '/calendar',
+    name: 'HelloWorld',
+    component: HelloWorld
+  },
+
   {
     path: '*',
     component: NotFound

@@ -52,6 +52,7 @@ export default class TodoList extends Vue {
   id = 0;
   lists: any[] = [];
   filter = "全部";
+  $toast: any;
 
   @Watch("lists")
   onListsChanged(val: string, oldVal: string) {
@@ -72,13 +73,19 @@ export default class TodoList extends Vue {
     if (inputContent) {
       const content = inputContent.trim();
       if (content) {
+        if (content.length > 12) {
+          return this.$toast("请控制在12个字符内~");
+        }
         this.lists.unshift({
           id: this.id++,
           content,
           finished: false,
         });
       }
+      this.$toast("添加成功");
       this.inputTask = "";
+    } else {
+      this.$toast("请输入内容");
     }
   }
 
@@ -86,13 +93,19 @@ export default class TodoList extends Vue {
     if (e.target.value) {
       const content = e.target.value.trim();
       if (content) {
+        if (content.length > 12) {
+          return this.$toast("请控制在12个字符内~");
+        }
         this.lists.unshift({
           id: this.id++,
           content,
           finished: false,
         });
       }
+      this.$toast("添加成功");
       this.inputTask = "";
+    } else {
+      this.$toast("请输入内容");
     }
   }
   removeTask(id: number) {
@@ -114,7 +127,13 @@ export default class TodoList extends Vue {
     this.filter = state;
   }
   deleteList() {
+    const oriListsLength = this.lists.length;
     this.lists = this.lists.filter((list) => !list.finished);
+    if (this.lists.length === oriListsLength) {
+      this.$toast("请先选择任务");
+    } else {
+      this.$toast("已删除任务");
+    }
   }
   clearAll() {
     this.lists = [];
@@ -176,6 +195,12 @@ h2 {
   box-shadow: 0 0 5px #ccc;
   input {
     border: none;
+  }
+}
+.cell-left {
+  width: 100%;
+  > input {
+    width: 100%;
   }
 }
 .cell-right {

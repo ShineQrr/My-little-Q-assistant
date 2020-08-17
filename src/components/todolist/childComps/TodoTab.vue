@@ -26,6 +26,7 @@ export default class TodoTab extends Vue {
   @Prop({ required: true }) filter?: string;
 
   status = ["全部", "未完成", "已完成"];
+  $toast: any;
   get unFinishedTask() {
     return this.lists ? this.lists.filter((list) => !list.finished).length : 0;
   }
@@ -37,6 +38,7 @@ export default class TodoTab extends Vue {
   }
   handleClear() {
     this.$emit("clear");
+    this.$toast("已清空任务");
   }
 }
 </script>
@@ -61,10 +63,7 @@ export default class TodoTab extends Vue {
     cursor: pointer;
     border: 1px solid transparent;
   }
-  // .btn-wrap > a.active,
-  // .clear-wrap > a {
-  //   border-color: #ccc;
-  // }
+
   .clear-wrap > a {
     border-color: #ccc;
   }

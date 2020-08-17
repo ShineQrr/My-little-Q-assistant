@@ -7,7 +7,7 @@ import store from './store'
 // import Layout from '@/views/Layout.vue';
 import Icon from '@/components/common/Icon.vue';
 import NavBar from '@/components/navbar/NavBar.vue';
-import Toast from "@/components/toast/index.ts";
+import { Toast } from '@/components/toast';
 
 Vue.use(Toast)
 

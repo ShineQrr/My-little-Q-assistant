@@ -36,6 +36,9 @@
     <div class="numberpad-wrapper">
       <NumberPad @update:value="onUpdateAmount" @submit="saveRecord"></NumberPad>
     </div>
+
+    <!-- 新增标签弹框 -->
+    <dialog-add></dialog-add>
   </div>
 </template>
 
@@ -48,11 +51,12 @@ import Tabs from "@/components/tabs/Tabs.vue";
 import Tags from "../money/childComps/Tags.vue";
 import FormItem from "../money/childComps/FormItem.vue";
 import NumberPad from "../money/childComps/NumberPad.vue";
+import DialogAdd from "@/components/dialogs/DialogAdd.vue";
 
 import recordTypeList from "@/constants/recordTypeList";
 
 @Component({
-  components: { Layout, NavBar, Tabs, Tags, FormItem, NumberPad },
+  components: { Layout, NavBar, Tabs, Tags, FormItem, NumberPad, DialogAdd },
 })
 export default class BookKeeping extends Vue {
   recordTypeList = recordTypeList;

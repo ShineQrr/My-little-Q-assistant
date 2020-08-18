@@ -68,7 +68,6 @@ export default class Home extends Vue {
   username = "清儿阿";
   name = "Qrr";
   userAvatarUrl = "src/assets/avatar.jpg";
-  $toast: any;
   gotoMoney() {
     this.$router.push("/money");
   }
@@ -80,6 +79,13 @@ export default class Home extends Vue {
   }
   closeColorPanel() {
     this.isColorPanelShow = false;
+  }
+
+  created() {
+    if (localStorage.getItem("themeColor")) {
+      const localTheme = JSON.parse(localStorage.getItem("themeColor") || "");
+      window.document.documentElement.setAttribute("data-theme", localTheme);
+    }
   }
 }
 </script>

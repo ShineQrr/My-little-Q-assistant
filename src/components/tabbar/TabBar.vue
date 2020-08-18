@@ -10,13 +10,13 @@
       <p>记账</p>
     </router-link>
     <router-link class="tabbar-item" to="/todolist" active-class="selected">
-      <Icon :name="todo" class="icon" />
+      <Icon :name="days" class="icon" />
       <p>记事</p>
     </router-link>
-    <router-link class="tabbar-item" to="/daysmatter" active-class="selected">
+    <!-- <router-link class="tabbar-item" to="/daysmatter" active-class="selected">
       <Icon :name="days" class="icon" />
       <p>记日</p>
-    </router-link>
+    </router-link>-->
   </div>
 </template>
 
@@ -30,11 +30,11 @@ export default class TabBar extends Vue {
   get money() {
     return this.$route.path === "/money" ? "money_selected" : "money";
   }
-  get todo() {
-    return this.$route.path === "/todolist" ? "label_selected" : "label";
-  }
+  // get todo() {
+  //   return this.$route.path === "/todolist" ? "label_selected" : "label";
+  // }
   get days() {
-    return this.$route.path === "/daysmatter"
+    return this.$route.path === "/todolist"
       ? "icon_calendar_fill"
       : "icon_calendar";
   }
@@ -43,6 +43,7 @@ export default class TabBar extends Vue {
 
 <style lang="scss" scoped>
 @import "~@/assets/style/var.scss";
+@import "~@/assets/style/mixin.scss";
 // 底部导航栏样式
 .tabbar {
   // @extend %outerShadow;
@@ -50,6 +51,7 @@ export default class TabBar extends Vue {
   // justify-content: space-around;
   box-shadow: 0 0 2px rgba(0, 0, 0, 0.25);
   font-size: 0.75rem;
+  background-color: $background-color;
   // router-link的样式
   > .tabbar-item {
     flex: 1;
@@ -67,7 +69,8 @@ export default class TabBar extends Vue {
     }
   }
   > .tabbar-item.selected {
-    color: $theme-color;
+    @include font_color(#86aea6);
+    // color: $theme-color;
     > .icon {
       animation: choose 0.5s ease;
     }

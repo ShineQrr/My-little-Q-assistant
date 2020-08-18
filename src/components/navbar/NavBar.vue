@@ -21,6 +21,7 @@ export default {
 
 <style lang="scss" scoped>
 @import "~@/assets/style/var.scss";
+@import "~@/assets/style/mixin.scss";
 
 .nav-bar {
   z-index: $nav-bar-z-index;
@@ -29,7 +30,10 @@ export default {
   height: $nav-bar-height;
   line-height: 1.5;
   text-align: center;
-  background-color: $theme-color;
+  font-weight: bold;
+  @include bg_color(#86aea6);
+  // @include bg_color(green);
+  // background-color: $theme-color;
   .nav-left {
     width: 3.75rem;
   }

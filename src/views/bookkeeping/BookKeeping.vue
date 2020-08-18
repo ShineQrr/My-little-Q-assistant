@@ -111,6 +111,7 @@ export default class BookKeeping extends Vue {
     vertical-align: -0.3em;
   }
   .tags-wrapper {
+    background-color: $background-color;
     // height: 200px;
     flex: 1;
     overflow: hidden;
@@ -145,6 +146,10 @@ export default class BookKeeping extends Vue {
   .interval-tabs-item {
     height: $nav-bar-height;
   }
+}
+.date-notes-wrapper,
+.numberpad-wrapper {
+  background-color: $background-color;
 }
 .mask {
   position: fixed;

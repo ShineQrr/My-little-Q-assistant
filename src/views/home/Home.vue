@@ -40,7 +40,7 @@
 
             <span class="grid-item-text">记事本</span>
           </div>
-          <div class="grid-item" @click="changeThemeColor">
+          <div class="grid-item" @click="showColorPanel">
             <svg class="icon grid-item-icon">
               <use xlink:href="#change-color2" />
             </svg>
@@ -50,6 +50,7 @@
         </div>
       </div>
     </Layout>
+    <color-panel :isColorPanelShow="isColorPanelShow" @close-panel="closeColorPanel()"></color-panel>
   </div>
 </template>
 
@@ -57,11 +58,13 @@
 import Vue from "vue";
 import { Component } from "vue-property-decorator";
 import Layout from "@/components/layout/Layout.vue";
+import ColorPanel from "@/components/colorpanel/ColorPanel.vue";
 
 @Component({
-  components: { Layout },
+  components: { Layout, ColorPanel },
 })
 export default class Home extends Vue {
+  isColorPanelShow = false;
   username = "清儿阿";
   name = "Qrr";
   userAvatarUrl = "src/assets/avatar.jpg";
@@ -72,23 +75,26 @@ export default class Home extends Vue {
   gotoRecord() {
     this.$router.push("/todolist");
   }
-  changeThemeColor() {
-    this.$toast("功能实现中");
+  showColorPanel() {
+    this.isColorPanelShow = true;
+  }
+  closeColorPanel() {
+    this.isColorPanelShow = false;
   }
 }
 </script>
 
 <style lang="scss" scoped>
+@import "~@/assets/style/var.scss";
+@import "~@/assets/style/mixin.scss";
 .head-field {
-  // text-align: center;
-  // padding: 20px 0;
-  // margin-top: 50px;
   flex: 1;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   text-align: center;
+  background-color: $background-color;
   .head-field-pic {
     width: 100%;
     .img-hover {
@@ -100,8 +106,8 @@ export default class Home extends Vue {
       border-radius: 50%;
       overflow: hidden;
       img {
-        width: 100px;
-        height: 100px;
+        width: 120px;
+        height: 120px;
       }
     }
   }
@@ -119,19 +125,11 @@ export default class Home extends Vue {
   }
 }
 
-.icon {
-  width: 1.1em;
-  height: 1.1em;
-  vertical-align: -0.15em;
-  fill: currentColor;
-  overflow: hidden;
-  margin-top: 10px;
-}
-
 .grid-nav-wrapper {
   display: flex;
   justify-content: space-around;
-  align-items: start;
+  // align-items: start;
+  background-color: $background-color;
 }
 .grid-item {
   display: flex;
@@ -142,6 +140,14 @@ export default class Home extends Vue {
   height: 50%;
   background-color: #f2f1ef;
   border-radius: 10px;
+  .icon {
+    width: 1.1em;
+    height: 1.1em;
+    vertical-align: -0.15em;
+    fill: currentColor;
+    overflow: hidden;
+    margin-top: 10px;
+  }
   .grid-item-icon {
     font-size: 2.8rem;
   }
@@ -151,56 +157,4 @@ export default class Home extends Vue {
     font-size: 0.875rem;
   }
 }
-
-// .grid-item {
-//   display: inline-block;
-//   text-align: center;
-//   width: 33.33%;
-//   padding: 20px 10px;
-//   box-sizing: border-box;
-//   position: relative;
-//   .grid-item-text {
-//     // color: #666;
-//     display: inline-block;
-//     padding-top: 10px;
-//   }
-//   .icon {
-//     width: 1.1em;
-//     height: 1.1em;
-//     vertical-align: -0.15em;
-//     fill: currentColor;
-//     overflow: hidden;
-//   }
-//   .iconfont {
-//     font-size: 2.2rem;
-//   }
-
-//   &:before {
-//     // 它意思就是要0.5px咯
-//     content: " ";
-//     position: absolute;
-//     right: 0;
-//     top: 0;
-//     width: 1px;
-//     height: 100%;
-//     border-right: 1px solid #d9d9d9;
-//     color: #d9d9d9;
-//     -webkit-transform: scaleX(0.5);
-//     -ms-transform: scaleX(0.5);
-//     transform: scaleX(0.5);
-//     right: -1px;
-//   }
-//   &:after {
-//     content: " ";
-//     position: absolute;
-//     left: 0;
-//     width: 100%;
-//     height: 1px;
-//     border-top: 1px solid #d9d9d9;
-//     -webkit-transform: scaleY(0.5);
-//     -ms-transform: scaleY(0.5);
-//     transform: scaleY(0.5);
-//     bottom: -1px;
-//   }
-// }
 </style>

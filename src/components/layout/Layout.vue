@@ -27,6 +27,7 @@ export default class Layout extends Vue {}
 </script>
 
 <style scoped lang="scss">
+@import "~@/assets/style/var.scss";
 .layout-wrapper {
   display: flex;
   flex-direction: column;
@@ -34,6 +35,7 @@ export default class Layout extends Vue {}
 }
 
 .content {
+  background-color: $background-color;
   overflow: auto;
   flex-grow: 1;
 }

@@ -75,17 +75,17 @@ p {
   flex-wrap: wrap;
 }
 
-@each $key, $value in $flex-jc {
-  .jc-#{$key} {
-    justify-content: $value;
-  }
-}
+// @each $key, $value in $flex-jc {
+//   .jc-#{$key} {
+//     justify-content: $value;
+//   }
+// }
 
-@each $key, $value in $flex-ai {
-  .ai-#{$key} {
-    align-items: $value;
-  }
-}
+// @each $key, $value in $flex-ai {
+//   .ai-#{$key} {
+//     align-items: $value;
+//   }
+// }
 .flex-1 {
   flex: 1;
 }

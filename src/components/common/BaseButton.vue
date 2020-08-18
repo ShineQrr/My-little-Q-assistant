@@ -14,12 +14,14 @@ export default class BaseButton extends Vue {}
 
 <style lang="scss" scoped>
 @import "~@/assets/style/var.scss";
+@import "~@/assets/style/mixin.scss";
 .customButton {
   // background: lighten($button-background-color, 5%);
-  background: darken($button-background-color, 2%);
-  border: 2px solid $button-background-color;
+  // background: darken($button-background-color, 2%);
+  // border: 2px solid $button-background-color;
+  @include bt_bg_color(#86aea6);
   font-size: $button-font-size;
-  // font-weight: bold;
+  font-weight: bold;
   border-radius: 12px;
   color: white;
   // border: none;

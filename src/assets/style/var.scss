@@ -42,6 +42,17 @@ $colors: (
 );
 
 
+// themes
+$background-color-theme1:#e0979e;
+$background-color-theme2:$pink;
+$background-color-theme3:#ed736f;
+$background-color-theme4:#c62f2f;
+$background-color-theme5:#3881a4;
+$background-color-theme6:#5ab4c7;
+$background-color-theme7:#86aea6;
+$background-color-theme8:#a5b6bb;
+
+
 $border-color: map-get($colors, 'light-1');
 $background-color: $grey-0;
 $theme-color:$red;
@@ -65,19 +76,19 @@ $font-sizes: (
   //16px,,,,
 );
 
-$flex-jc: (
-  start: flex-start,
-  end: flex-end,
-  center: center,
-  between: space-between,
-  around: space-around,
-);
-$flex-ai: (
-  start: flex-start,
-  end: flex-end,
-  center: center,
-  stretch: stretch,
-);
+// $flex-jc: (
+//   start: flex-start,
+//   end: flex-end,
+//   center: center,
+//   between: space-between,
+//   around: space-around,
+// );
+// $flex-ai: (
+//   start: flex-start,
+//   end: flex-end,
+//   center: center,
+//   stretch: stretch,
+// );
 
 // Component Colors
 $text-color: $gray-7;

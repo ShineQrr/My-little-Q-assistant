@@ -196,7 +196,7 @@ export default class Money extends Vue {
 
 <style lang="scss" scoped>
 @import "~@/assets/style/var.scss";
-
+@import "~@/assets/style/mixin.scss";
 .money-content-wrapper {
   display: flex;
   align-items: center;
@@ -207,11 +207,13 @@ export default class Money extends Vue {
   font-weight: 600;
   color: $text-color;
   .content-date {
-    color: $theme-color;
+    @include font_color(#86aea6);
+    // color: $theme-color;
     font-size: 1.125rem;
   }
   .content-cost {
-    color: $theme-color;
+    @include font_color(#86aea6);
+    // color: $theme-color;
     font-size: 1.375rem;
   }
 }
@@ -221,6 +223,7 @@ export default class Money extends Vue {
   color: $text-color;
   margin-bottom: 32px;
   font-size: $font-size-md;
+
   .hide-bar-icon {
     margin-left: 4px;
   }

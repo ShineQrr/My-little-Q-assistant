@@ -21,30 +21,30 @@
               <img src="../../assets/avatar.jpg" />
             </span>
           </span>
+          <div class="username-field">{{ username }}</div>
         </div>
 
         <!-- 图形菜单区域 -->
         <div class="grid-nav-wrapper">
           <div class="grid-item" @click="gotoMoney">
-            <svg class="icon iconfont">
-              <use xlink:href="#money_box" />
+            <svg class="icon grid-item-icon">
+              <use xlink:href="#GULULU-money" />
             </svg>
-
-            <br />
             <span class="grid-item-text">记账本</span>
           </div>
+
           <div class="grid-item" @click="gotoRecord">
-            <svg class="icon iconfont">
-              <use xlink:href="#todo_list" />
+            <svg class="icon grid-item-icon">
+              <use xlink:href="#GULULU-todolist" />
             </svg>
-            <br />
+
             <span class="grid-item-text">记事本</span>
           </div>
           <div class="grid-item" @click="changeThemeColor">
-            <svg class="icon iconfont">
-              <use xlink:href="#skill" />
+            <svg class="icon grid-item-icon">
+              <use xlink:href="#change-color2" />
             </svg>
-            <br />
+
             <span class="grid-item-text">换肤</span>
           </div>
         </div>
@@ -62,6 +62,7 @@ import Layout from "@/components/layout/Layout.vue";
   components: { Layout },
 })
 export default class Home extends Vue {
+  username = "清儿阿";
   name = "Qrr";
   userAvatarUrl = "src/assets/avatar.jpg";
   $toast: any;
@@ -84,11 +85,11 @@ export default class Home extends Vue {
   // margin-top: 50px;
   flex: 1;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   text-align: center;
   .head-field-pic {
-    display: inline-block;
     width: 100%;
     .img-hover {
       // css 宽高等比例
@@ -104,11 +105,8 @@ export default class Home extends Vue {
       }
     }
   }
-
-  .info-field {
-    text-align: center;
-    font-size: 16px;
-    color: #999;
+  .username-field {
+    padding-top: 8px;
   }
 }
 
@@ -121,72 +119,88 @@ export default class Home extends Vue {
   }
 }
 
-.grid-nav-wrapper {
-  word-spacing: -6px;
-  position: relative;
-  &:before {
-    content: " ";
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 1px;
-    border-top: 1px solid #d9d9d9;
-    -webkit-transform: scaleY(0.5);
-    -ms-transform: scaleY(0.5);
-    transform: scaleY(0.5);
-    top: -1px;
-  }
-  .grid-item {
-    display: inline-block;
-    text-align: center;
-    width: 33.33%;
-    padding: 20px 10px;
-    box-sizing: border-box;
-    position: relative;
-    .grid-item-text {
-      // color: #666;
-      display: inline-block;
-      padding-top: 10px;
-    }
-    .icon {
-      width: 1.1em;
-      height: 1.1em;
-      vertical-align: -0.15em;
-      fill: currentColor;
-      overflow: hidden;
-    }
-    .iconfont {
-      font-size: 2.2rem;
-    }
+.icon {
+  width: 1.1em;
+  height: 1.1em;
+  vertical-align: -0.15em;
+  fill: currentColor;
+  overflow: hidden;
+  margin-top: 10px;
+}
 
-    &:before {
-      // 它意思就是要0.5px咯
-      content: " ";
-      position: absolute;
-      right: 0;
-      top: 0;
-      width: 1px;
-      height: 100%;
-      border-right: 1px solid #d9d9d9;
-      color: #d9d9d9;
-      -webkit-transform: scaleX(0.5);
-      -ms-transform: scaleX(0.5);
-      transform: scaleX(0.5);
-      right: -1px;
-    }
-    &:after {
-      content: " ";
-      position: absolute;
-      left: 0;
-      width: 100%;
-      height: 1px;
-      border-top: 1px solid #d9d9d9;
-      -webkit-transform: scaleY(0.5);
-      -ms-transform: scaleY(0.5);
-      transform: scaleY(0.5);
-      bottom: -1px;
-    }
+.grid-nav-wrapper {
+  display: flex;
+  justify-content: space-around;
+  align-items: start;
+}
+.grid-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 27%;
+  height: 50%;
+  background-color: #f2f1ef;
+  border-radius: 10px;
+  .grid-item-icon {
+    font-size: 2.8rem;
+  }
+  .grid-item-text {
+    padding-top: 6px;
+    font-weight: bold;
+    font-size: 0.875rem;
   }
 }
+
+// .grid-item {
+//   display: inline-block;
+//   text-align: center;
+//   width: 33.33%;
+//   padding: 20px 10px;
+//   box-sizing: border-box;
+//   position: relative;
+//   .grid-item-text {
+//     // color: #666;
+//     display: inline-block;
+//     padding-top: 10px;
+//   }
+//   .icon {
+//     width: 1.1em;
+//     height: 1.1em;
+//     vertical-align: -0.15em;
+//     fill: currentColor;
+//     overflow: hidden;
+//   }
+//   .iconfont {
+//     font-size: 2.2rem;
+//   }
+
+//   &:before {
+//     // 它意思就是要0.5px咯
+//     content: " ";
+//     position: absolute;
+//     right: 0;
+//     top: 0;
+//     width: 1px;
+//     height: 100%;
+//     border-right: 1px solid #d9d9d9;
+//     color: #d9d9d9;
+//     -webkit-transform: scaleX(0.5);
+//     -ms-transform: scaleX(0.5);
+//     transform: scaleX(0.5);
+//     right: -1px;
+//   }
+//   &:after {
+//     content: " ";
+//     position: absolute;
+//     left: 0;
+//     width: 100%;
+//     height: 1px;
+//     border-top: 1px solid #d9d9d9;
+//     -webkit-transform: scaleY(0.5);
+//     -ms-transform: scaleY(0.5);
+//     transform: scaleY(0.5);
+//     bottom: -1px;
+//   }
+// }
 </style>

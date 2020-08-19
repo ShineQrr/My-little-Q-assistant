@@ -117,13 +117,14 @@ $price-integer-font-family: Avenir-Heavy, PingFang SC, Helvetica Neue, Arial,
   sans-serif;
 
 
-// NavBar
-$nav-bar-height: 46px;
-$nav-bar-arrow-size: 16px;
-$nav-bar-text-color: $white;
-$nav-bar-title-font-size: $font-size-lg;
-$nav-bar-title-text-color: $text-color;
-$nav-bar-z-index: 5;
+  // Padding
+$padding-base: 4px;
+$padding-xs: $padding-base * 2;
+$padding-sm: $padding-base * 3;
+$padding-md: $padding-base * 4;
+$padding-lg: $padding-base * 6;
+$padding-xl: $padding-base * 8;
+
 
 // Button
 $button-background-color:$theme-color;
@@ -151,5 +152,14 @@ $tab-content-font-size: $font-size-md;
 $tab-item-selected-color:$red;
 $tab-item-hight:48px;
 
+// Dialog
+$dialog-width: 20rem;
+$dialog-small-screen-width: 90%;
+$dialog-font-size: 16px;
+$dialog-border-radius: 16px;
+$dialog-background-color:#fff;
+$dialog-transition: 0.3s;
+
 
 $color-shadow:rgba(0, 0, 0, 0.3);
+

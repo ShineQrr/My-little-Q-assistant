@@ -4,6 +4,7 @@ type RootState = {
     createRecordError: Error | null;
     tagList: Tag[];
     currentTag?: Tag;
+    addTagResult: { code: number; message: string };
 }
 
 type RecordItem = {
@@ -19,14 +20,14 @@ type Tag = {
     name: string;
 }
 
-type TagListModel = {
-    data: Tag[];
-    fetch: () => Tag[];
-    createItem: (name: string) => { code: number; message: string };// 1 表示成功 0表示name重复
-    save: () => void;
-    update: (id: string, name: string) => 'success' | 'not found' | 'duplicated';
-    remove: (id: string) => boolean;
-}
+// type TagListModel = {
+//     data: Tag[];
+//     fetch: () => Tag[];
+//     createItem: (name: string) => { code: number; message: string };// 1 表示成功 0表示name重复
+//     save: () => void;
+//     update: (id: string, name: string) => 'success' | 'not found' | 'duplicated';
+//     remove: (id: string) => boolean;
+// }
 
 type TodoList = {
     id: number;

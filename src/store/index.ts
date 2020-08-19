@@ -4,7 +4,6 @@ import clone from '@/lib/clone';
 import createId from '../lib/createId';
 import router from '../router/index';
 
-
 Vue.use(Vuex)
 
 
@@ -14,7 +13,8 @@ const store = new Vuex.Store({
     recordList: [],
     createRecordError: null,
     tagList: [],
-    currentTag: undefined
+    currentTag: undefined,
+    addTagResult: { code: 2, message: '' }
   } as RootState,
 
   mutations: {
@@ -47,12 +47,12 @@ const store = new Vuex.Store({
     addTag(state, name: string) {
       const names = state.tagList.map(item => item.name);
       if (names.includes(name)) {
-        window.alert('标签名重复了');
+        state.addTagResult = { code: 0, message: '标签名重复了' }
       } else {
         const id = createId().toString();
         state.tagList.push({ id, name: name });
         store.commit('saveTags')
-        window.alert('新增标签成功');
+        state.addTagResult = { code: 1, message: '新增标签成功' }
       }
     },
     saveTags(state) {

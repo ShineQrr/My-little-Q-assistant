@@ -29,18 +29,21 @@ import { Component, Prop } from "vue-property-decorator";
 @Component
 export default class DialogAdd extends Vue {
   inputTagName = "";
+  $toast: any;
   cancel() {
     this.$store.commit("changeVisualization");
     this.inputTagName = "";
   }
   determine() {
     if (!this.inputTagName) {
-      window.alert("请输入标签名!");
+      // window.alert("请输入标签名!");
+      return this.$toast("请输入标签名");
       // return Toast("请输入标签名");
     } else {
       this.$store.commit("addTag", this.inputTagName);
       this.$store.commit("changeVisualization");
       this.inputTagName = "";
+      this.$toast(this.$store.state.addTagResult.message);
     }
   }
 }

@@ -1,5 +1,9 @@
 <template>
   <div class="tags">
+    <!-- 新增标签按钮 -->
+    <div class="new">
+      <button @click="createTagTest">新增标签</button>
+    </div>
     <ul class="current">
       <li
         v-for="item in tagList "
@@ -8,10 +12,6 @@
         :class="{selected:selectedTags.includes(item)}"
       >{{ item.name }}</li>
     </ul>
-    <!-- 新增标签按钮 -->
-    <div class="new">
-      <button @click="createTagTest">新增标签</button>
-    </div>
   </div>
 </template>
 
@@ -66,19 +66,20 @@ export default class Tags extends mixins(TagHelper) {
 
 <style lang="scss" scoped>
 @import "~@/assets/style/var.scss";
+@import "~@/assets/style/mixin.scss";
 
 .tags {
   font-size: 14px;
   padding: 16px;
   box-sizing: content-box;
-  // max-height: calc(100% - 44px);
+  max-height: calc(100% - 44px);
   overflow: auto;
   > .current {
     display: flex;
     align-items: center;
     flex-wrap: wrap;
     > li {
-      background-color: lighten($red, 40%);
+      background-color: $white;
       height: 24px;
       line-height: 24px;
       border-radius: 12px;
@@ -86,14 +87,14 @@ export default class Tags extends mixins(TagHelper) {
       margin-right: 12px;
       margin-top: 4px;
       &.selected {
-        background: lighten($red, 10%);
-        color: white;
+        background: lighten($orange-dark, 10%);
+        color: $gray-3;
         font-weight: 600;
       }
     }
   }
   > .new {
-    padding-top: 16px;
+    padding-bottom: 10px;
     button {
       background: transparent;
       border: none;

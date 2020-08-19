@@ -116,9 +116,8 @@ export default class BookKeeping extends Vue {
   }
   .tags-wrapper {
     background-color: $background-color;
-    // height: 200px;
     flex: 1;
-    overflow: hidden;
+    overflow: auto;
     // border-bottom: 1px solid red;
     box-shadow: inset 0 -3px 3px -3px $color-shadow;
   }

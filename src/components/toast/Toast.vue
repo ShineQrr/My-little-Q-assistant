@@ -21,6 +21,7 @@ export default class Toast extends Vue {}
   border-radius: 5px;
   transform: translate(-50%, -50%);
   color: #fff;
+  z-index: 999;
 }
 .fadein {
   animation: animate_in 0.25s;
